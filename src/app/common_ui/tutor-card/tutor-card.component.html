@@ -1,0 +1,10 @@
+<body class="tutor_card">
+
+  <img src="https://drive.google.com/thumbnail?id={{ tutor.avatar }}" alt="" class="avatar">
+  <a class="name">{{ tutor.name }}</a>
+  <ul class="subjects">
+    @for (subject of tutor.subjects; track subject) {
+      <li>{{subject}}</li>
+    }
+  </ul>
+</body>

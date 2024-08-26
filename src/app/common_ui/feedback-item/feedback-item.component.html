@@ -1,0 +1,18 @@
+<body class="feedback_item">
+    <a id="feedback" href="#{{feedback.id}}" aria-hidden="true" class="feedback_bubble" >
+        <p class="feedback_text">{{ feedback.title }}</p>
+        <p class="feedback_author">{{ feedback.author }}</p>
+    </a>
+    <div [id]="feedback.id" class="popup" >
+        <a href="#header" class="popup_area"></a>
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#header" class="popup_close">X</a>
+                <div class="popup_title">{{ feedback.title }}</div>
+                <div class="popup_full-text">{{ feedback.all_text }}</div>
+                <div class="popup_author">{{ feedback.author }}</div>
+            </div>
+        </div>
+    </div>
+</body>
+

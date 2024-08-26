@@ -1,0 +1,46 @@
+  @if (tutor$ | async; as tutor) {
+  <body class="body">
+    <div class="info">
+      <img src="https://drive.google.com/thumbnail?id={{ tutor.avatar }}" alt="" class="avatar">
+      <div class="name_subjects">
+        <p class="name">{{tutor.name}}</p>
+        <ul class="subjects">
+          @for (subject of tutor.subjects; track subject) {
+            <li>{{subject}}</li>
+          }
+        </ul>
+      </div>
+      <div class="description_wide">
+        <p>{{tutor.description}}</p>
+      </div>
+    </div>
+    <div class="description_high">
+      <p>{{tutor.description}}</p>
+    </div>
+    <div class="prices">
+      <p class="title">Стоимость занятий:</p>
+      <table class="price_table">
+        @for (price of tutor.prices; track price) {
+          <tr class="price_line">
+            <td class="subject"><p>{{price.name}}</p></td>
+            <td class="price"><p>{{price.price}} руб./час</p></td>
+          </tr>
+        }
+      </table>
+    </div>
+    <div class="contacts">
+      <a href={{tutor.contact}}>Hi</a>
+      <form action={{tutor.contact}} method="get">
+        <button class="get_contacts" type="submit">Написать преподавателю</button>
+      </form>
+      <div class="pictures">
+        <img src="/assets/img_butt.png" alt="" class="left">
+        <img src="/assets/img_girl_3.png" alt="" class="right">
+      </div>
+    </div>
+
+  </body>
+  }
+
+
+  <app-footage></app-footage>
